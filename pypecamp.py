@@ -16,7 +16,7 @@ def read_game_json(js: str):
     try:
         with open(js, "r") as game_file:
             tiles = json.loads(game_file.read().strip())
-            return tiles['tiles']
+            return tiles["tiles"]
     except FileNotFoundError:
         raise SystemExit(f"File not found: {js}")
     except PermissionError:
@@ -30,12 +30,12 @@ def open_image_files():
     images = {}
     for number in range(0, 15):
         n = str(number + 1).zfill(2)
-        png = f'images/{n}.png'
+        png = f"images/{n}.png"
         try:
             img = Image.open(png)
             images[number + 1] = img
         except OSError:
-            raise SystemExit(f'Failed to open image {png}')
+            raise SystemExit(f"Failed to open image {png}")
 
     return images
 
@@ -47,7 +47,7 @@ def render_grid(tiles: List[int], images: dict):
         sqrt = math.sqrt(len(tiles))
         assert int(sqrt) == sqrt
     except AssertionError:
-        raise SystemExit('Grid was not square, exiting.')
+        raise SystemExit("Grid was not square, exiting.")
 
     # Ensure every .png is the same width and height (all squares)
     try:
@@ -57,17 +57,19 @@ def render_grid(tiles: List[int], images: dict):
         # assert all([im[i].size[0] == 500 for i, im in enumerate(images)])
         # assert all([im.size[1] == 500 for im in images])
     except AssertionError:
-        raise SystemExit('Err: Not all .png files are same width and height.')
+        raise SystemExit("Err: Not all .png files are same width and height.")
 
     # Set the image width and height for rendered grid
     grid_width = int(images[1].size[0] * sqrt)
     grid_height = int(images[1].size[1] * sqrt)
     col_width = int(images[1].size[0])
-    # col_height = images[0].size[1]
+    col_height = int(images[1].size[1])
+    slice_size = int(sqrt)
     grid = Image.new("RGB", (grid_width, grid_height))
 
-    for i, tile in enumerate(tiles[:5]):
-        grid.paste(images[tile], (i * col_width, 0))
+    for j, section in enumerate(range(slice_size, slice_size**2 + 1, slice_size)):
+        for i, tile in enumerate(tiles[section - slice_size : section]):
+            grid.paste(images[tile], (i * col_width, j * col_height))
 
     return grid
 
@@ -79,10 +81,7 @@ def main():
         usage()
 
     tiles = read_game_json(js)
-    print(tiles)
-
     images = open_image_files()
-    print(images)
 
     grid = render_grid(tiles, images)
     grid.show()
