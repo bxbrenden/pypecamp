@@ -4,6 +4,10 @@
 
 A python-based image renderer for [Hexapipes](https://hexapipes.vercel.app/square/5) games.
 
+## Limitations
+This project currently renders images of square Hexapipes grids only.
+No other grids such as Penrose, cube, etc. will work with this tool.
+
 ## Installation
 This tool requires python `3.11` and uses [pipenv](https://pipenv.pypa.io/en/latest/) to manage dependencies.
 You can install `pipenv` via pip:
