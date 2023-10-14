@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 pillow = "*"
-ipython = "*"
-flake8 = "*"
-black = "*"
 
 [dev-packages]
+black = "*"
+flake8 = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.11"
