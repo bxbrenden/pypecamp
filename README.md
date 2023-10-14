@@ -39,3 +39,8 @@ It is also saved to a file with a long name like this:
 
 The long name is simply a comma-separated list of the tiles' positions on the grid.
 This naming scheme, though ugly, guarantees unique names for each output file.
+
+## pypecamp??
+Since the tool renders Hexapipes images, I wanted a unique name that had "pipe" in it somewhere.
+I named this project after my favorite episode of a Tim and Eric show called _Tom Goes to the Mayor_-- [Pipe Camp](https://www.imdb.com/title/tt0726060/).
+The "py" at the beginning is a nod to the tool being written in python.
