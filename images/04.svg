@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.61877219"
-     inkscape:cx="167.26673"
-     inkscape:cy="333.72541"
+     inkscape:cx="141.40907"
+     inkscape:cy="335.34151"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -52,7 +52,7 @@
        ry="1.5855491e-07" />
     <path
        id="path966"
-       style="fill:#0099db;stroke-width:3.63636;stroke-linecap:round;stroke-linejoin:round;stroke:#181425"
+       style="fill:#0099db;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke:#181425;stroke-dasharray:none"
        d="M 66.030078 33.072917 A 33.072918 33.072918 0 0 0 35.858793 52.916667 L -18.739941 52.916667 L -18.739941 79.375 L 35.85931 79.375 A 33.072918 33.072918 0 0 0 66.184591 99.21875 A 33.072918 33.072918 0 0 0 99.21875 66.145833 L 99.218233 65.991838 A 33.072918 33.072918 0 0 0 66.030078 33.072917 z " />
   </g>
 </svg>
