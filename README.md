@@ -24,7 +24,7 @@ pipenv shell
 ## Usage
 `pypecamp` renders images of Hexapipes puzzles based on JSON files downloaded from the Hexapipes website.
 The picture below shows how to download the JSON version of a puzzle:
-<img src="" alt="Example image demonstrating the download of a Hexapipes JSON puzzle" width=600px>
+<img src="https://github.com/bxbrenden/pypecamp/blob/main/images/download-json.png" alt="Example image demonstrating the download of a Hexapipes JSON puzzle" width=600px>
 
 For example, to render an image of a puzzle called `puzzle.json`:
 ```bash
