@@ -1,5 +1,6 @@
 import json
 import math
+import os
 import sys
 from typing import List
 
@@ -76,8 +77,11 @@ def render_grid(tiles: List[int], images: dict):
 
 def save_render(grid, filename):
     """Write the rendered grid .png image to a file."""
+    # Ensure "renders" directory exists
+    os.makedirs("renders", exist_ok=True)
+
     try:
-        grid.save(filename)
+        grid.save(f'renders/{filename}')
     except OSError as ose:
         raise SystemExit(f"Failed to save image to {filename}:\n{ose}")
 
@@ -93,7 +97,7 @@ def main():
 
     grid = render_grid(tiles, images)
     grid.show()
-    signature = ",".join([str(t) for t in tiles])
+    signature = "-".join([str(t) for t in tiles])
     save_render(grid, f"{signature}.png")
 
 

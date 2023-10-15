@@ -5,7 +5,7 @@
 A python-based image renderer for [Hexapipes](https://hexapipes.vercel.app/square/5) games.
 
 ## Limitations
-This project currently renders images of square Hexapipes grids only.
+This project currently renders PNG images of square Hexapipes grids only.
 No other grids such as Penrose, cube, etc. will work with this tool.
 
 ## Installation
@@ -36,12 +36,12 @@ python3 pypecamp.py puzzle.json
 ```
 
 The output will be rendered to your screen
-It is also saved to a file with a long name like this:
+It is also saved to a PNG file with a long name like this:
 ```
-9,6,12,5,12,10,9,13,3,11,13,1,10,10,8,14,9,5,14,9,4,1,2,8,4.png
+1-12-1-13-4-8-11-13-7-4-11-6-11-12-8-10-8-10-11-14-2-3-6-2-2.png
 ```
 
-The long name is simply a comma-separated list of the tiles' positions on the grid.
+The long name is simply a hyphen-separated list of the tiles' positions on the grid.
 This naming scheme, though ugly, guarantees unique names for each output file.
 
 ## pypecamp??
