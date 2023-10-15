@@ -8,6 +8,9 @@ A python-based image renderer for [Hexapipes](https://hexapipes.vercel.app/squar
 This project currently renders PNG images of square Hexapipes grids only.
 No other grids such as Penrose, cube, etc. will work with this tool.
 
+Also, the PNG images become very large as the dimensions of the grid increase.
+The tool may have trouble rendering images of 40x40 puzzles or larger.
+
 ## Installation
 This tool requires python `3.11` and uses [pipenv](https://pipenv.pypa.io/en/latest/) to manage dependencies.
 You can install `pipenv` via pip:
