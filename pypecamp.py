@@ -1,3 +1,4 @@
+import datetime
 import json
 import math
 import os
@@ -75,13 +76,18 @@ def render_grid(tiles: List[int], images: dict):
     return grid
 
 
-def save_render(grid, filename):
+def save_render(grid):
     """Write the rendered grid .png image to a file."""
     # Ensure "renders" directory exists
     os.makedirs("renders", exist_ok=True)
 
+    today = datetime.datetime.now().replace(microsecond=0)
+    datetime_stamp = today.isoformat()
+    filename = f'renders/hexapipes-{datetime_stamp}.png'
+
     try:
-        grid.save(f'renders/{filename}')
+        grid.save(filename)
+        print(f'Saved output to renders/{filename}')
     except OSError as ose:
         raise SystemExit(f"Failed to save image to {filename}:\n{ose}")
 
@@ -97,8 +103,7 @@ def main():
 
     grid = render_grid(tiles, images)
     grid.show()
-    signature = "-".join([str(t) for t in tiles])
-    save_render(grid, f"{signature}.png")
+    save_render(grid)
 
 
 if __name__ == "__main__":

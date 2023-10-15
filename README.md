@@ -36,13 +36,10 @@ python3 pypecamp.py puzzle.json
 ```
 
 The output will be rendered to your screen
-It is also saved to a PNG file with a long name like this:
+It is also saved to a PNG file with a name like this:
 ```
-1-12-1-13-4-8-11-13-7-4-11-6-11-12-8-10-8-10-11-14-2-3-6-2-2.png
+hexapipes-2023-10-14T19:58:14.png
 ```
-
-The long name is simply a hyphen-separated list of the tiles' positions on the grid.
-This naming scheme, though ugly, guarantees unique names for each output file.
 
 ## pypecamp??
 Since the tool renders Hexapipes images, I wanted a unique name that had "pipe" in it somewhere.
